@@ -7,15 +7,27 @@ import android.graphics.BitmapFactory;
 public class BitmapBank {
 
     Bitmap gameBackground;
+    Bitmap[] spinningOrc;
 
 
     public BitmapBank(Resources resources) {
         gameBackground = BitmapFactory.decodeResource(resources, R.drawable.barbarian_village_game_background);
         gameBackground = scaleImage(gameBackground);
+        spinningOrc = new Bitmap[6];
+        spinningOrc[0] = BitmapFactory.decodeResource(resources, R.drawable.orc_1);
+        spinningOrc[1] = BitmapFactory.decodeResource(resources, R.drawable.orc_2);
+        spinningOrc[2] = BitmapFactory.decodeResource(resources, R.drawable.orc_3);
+        spinningOrc[3] = BitmapFactory.decodeResource(resources, R.drawable.orc_4);
+        spinningOrc[4] = BitmapFactory.decodeResource(resources, R.drawable.orc_5);
+        spinningOrc[5] = BitmapFactory.decodeResource(resources, R.drawable.orc_6);
     }
 
     public Bitmap getGameBackground() {
         return gameBackground;
+    }
+
+    public Bitmap getSpinningOrc(int frame) {
+        return spinningOrc[frame];
     }
 
     public int getGameBackgroundWidth() {
@@ -24,6 +36,14 @@ public class BitmapBank {
 
     public int getGameBackgroundHeight() {
         return gameBackground.getHeight();
+    }
+
+    public int getOrcWidth() {
+        return spinningOrc[0].getWidth();
+    }
+
+    public int getOrcHeight() {
+        return spinningOrc[0].getHeight();
     }
 
     public Bitmap scaleImage(Bitmap bitmap) {
