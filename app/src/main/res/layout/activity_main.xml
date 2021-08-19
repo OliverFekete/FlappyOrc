@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@drawable/start_button"
-            android:translationY="-100dp"
-            android:onClick="startGame"/>
+            android:translationY="50dp"
+            android:onClick="startGame" android:scaleX="3" android:scaleY="3"/>
 
 </RelativeLayout>
